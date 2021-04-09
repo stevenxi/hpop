@@ -24,8 +24,8 @@ namespace OpenPop.TestApplication
 		private Button connectAndRetrieveButton;
 		private Button uidlButton;
 		private Panel attachmentPanel;
-		private ContextMenu contextMenuMessages;
-		private DataGrid gridHeaders;
+		private ContextMenuStrip contextMenuMessages;
+		private DataGridView gridHeaders;
 		private Label labelServerAddress;
 		private Label labelServerPort;
 		private Label labelAttachments;
@@ -36,8 +36,8 @@ namespace OpenPop.TestApplication
 		private Label labelUsername;
 		private TreeView listAttachments;
 		private TreeView listMessages;
-		private MenuItem menuDeleteMessage;
-		private MenuItem menuViewSource;
+		private ToolStripMenuItem menuDeleteMessage;
+		private ToolStripMenuItem menuViewSource;
 		private Panel panelTop;
 		private Panel panelProperties;
 		private Panel panelMiddle;
@@ -115,7 +115,7 @@ namespace OpenPop.TestApplication
 			this.labelServerAddress = new System.Windows.Forms.Label();
 			this.popServerTextBox = new System.Windows.Forms.TextBox();
 			this.panelProperties = new System.Windows.Forms.Panel();
-			this.gridHeaders = new System.Windows.Forms.DataGrid();
+			this.gridHeaders = new System.Windows.Forms.DataGridView();
 			this.panelMiddle = new System.Windows.Forms.Panel();
 			this.panelMessageBody = new System.Windows.Forms.Panel();
 			this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -123,9 +123,9 @@ namespace OpenPop.TestApplication
 			this.labelMessageBody = new System.Windows.Forms.Label();
 			this.panelMessagesView = new System.Windows.Forms.Panel();
 			this.listMessages = new System.Windows.Forms.TreeView();
-			this.contextMenuMessages = new System.Windows.Forms.ContextMenu();
-			this.menuDeleteMessage = new System.Windows.Forms.MenuItem();
-			this.menuViewSource = new System.Windows.Forms.MenuItem();
+			this.contextMenuMessages = new System.Windows.Forms.ContextMenuStrip();
+			this.menuDeleteMessage = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuViewSource = new System.Windows.Forms.ToolStripMenuItem();
 			this.labelMessageNumber = new System.Windows.Forms.Label();
 			this.attachmentPanel = new System.Windows.Forms.Panel();
 			this.listAttachments = new System.Windows.Forms.TreeView();
@@ -285,10 +285,8 @@ namespace OpenPop.TestApplication
 						| System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
 			this.gridHeaders.DataMember = "";
-			this.gridHeaders.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.gridHeaders.Location = new System.Drawing.Point(0, 0);
 			this.gridHeaders.Name = "gridHeaders";
-			this.gridHeaders.PreferredColumnWidth = 400;
 			this.gridHeaders.ReadOnly = true;
 			this.gridHeaders.Size = new System.Drawing.Size(865, 188);
 			this.gridHeaders.TabIndex = 3;
@@ -360,7 +358,7 @@ namespace OpenPop.TestApplication
 			this.listMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.listMessages.ContextMenu = this.contextMenuMessages;
+			this.listMessages.ContextMenuStrip = this.contextMenuMessages;
 			this.listMessages.Location = new System.Drawing.Point(8, 24);
 			this.listMessages.Name = "listMessages";
 			this.listMessages.Size = new System.Drawing.Size(266, 160);
@@ -369,19 +367,17 @@ namespace OpenPop.TestApplication
 			// 
 			// contextMenuMessages
 			// 
-			this.contextMenuMessages.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.contextMenuMessages.Items.AddRange(new ToolStripItem[]{
             this.menuDeleteMessage,
             this.menuViewSource});
 			// 
 			// menuDeleteMessage
 			// 
-			this.menuDeleteMessage.Index = 0;
 			this.menuDeleteMessage.Text = "Delete Mail";
 			this.menuDeleteMessage.Click += new System.EventHandler(this.MenuDeleteMessageClick);
 			// 
 			// menuViewSource
 			// 
-			this.menuViewSource.Index = 1;
 			this.menuViewSource.Text = "View source";
 			this.menuViewSource.Click += new System.EventHandler(this.MenuViewSourceClick);
 			// 
