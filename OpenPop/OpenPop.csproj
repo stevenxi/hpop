@@ -1,13 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Description>POP3 Mail Library</Description>
     <Product>OpenPop POP3 Mail Library</Product>
     <Copyright>Public Domain</Copyright>
     <PackageReleaseNotes>Release mode assembly. Built for .NET Core</PackageReleaseNotes>
     <PackageId>OpenPop.Core</PackageId>
     <Authors>Imaginations Delivered</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/imgdelivered/hpop</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

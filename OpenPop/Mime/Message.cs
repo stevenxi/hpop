@@ -190,8 +190,8 @@ namespace OpenPop.Mime
 			if(Headers.From != null && Headers.From.HasValidMailAddress)
 				message.From = Headers.From.MailAddress;
 
-			if (Headers.ReplyTo != null && Headers.ReplyTo.HasValidMailAddress)
-				message.ReplyTo = Headers.ReplyTo.MailAddress;
+            if (Headers.ReplyTo != null && Headers.ReplyTo.HasValidMailAddress)
+                message.ReplyToList.Add(Headers.ReplyTo.MailAddress);
 
 			if(Headers.Sender != null && Headers.Sender.HasValidMailAddress)
 				message.Sender = Headers.Sender.MailAddress;
