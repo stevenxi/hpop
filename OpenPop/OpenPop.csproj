@@ -33,7 +33,7 @@
 
 Ported for .NET Core
 https://github.com/imgdelivered/hpop</PackageReleaseNotes>
-    <PackageId>OpenPop.Core</PackageId>
+    <PackageId>OpenPop.Core_UDIntelFork</PackageId>
     <Authors>Imaginations Delivered, OpenPop</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/imgdelivered/hpop</RepositoryUrl>
