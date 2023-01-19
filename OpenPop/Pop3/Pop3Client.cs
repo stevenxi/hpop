@@ -331,6 +331,9 @@ namespace OpenPop.Pop3
 					case AuthenticationMethod.CramMd5:
 						AuthenticateUsingCramMd5(username, password);
 						break;
+					case AuthenticationMethod.OAuth2:
+                        AuthenticateUsingOauth2(username, password);
+						break;
 				}
 			} catch(PopServerException e)
 			{
@@ -420,6 +423,24 @@ namespace OpenPop.Pop3
 
 			// Authentication was successful if no exceptions thrown before getting here
 		}
+
+        /// <summary>
+        /// Authenticates a user towards the POP server using the Oauth2 commands
+        /// </summary>
+        /// <param name="username">The username</param>
+        /// <param name="password">The Oauth2 token</param>
+        /// <exception cref="PopServerException">If the server responded with -ERR</exception>
+        private void AuthenticateUsingOauth2(string username, string password)
+        {
+			//https://github.com/foens/hpop/issues/96
+			string auth = "user=" + username + "\u0001auth=Bearer " + password + "\u0001\u0001";
+            string authToken = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(auth));
+            SendCommand("AUTH XOAUTH2"); // + password);
+            SendCommand(authToken);
+
+            // Authentication was successful if no exceptions thrown before getting here
+        }
+
 		#endregion
 
 		#region Public POP3 commands
